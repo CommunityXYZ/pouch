@@ -1,2 +1,2 @@
 # pouch
-An Arweave wallet identifier with details about their balances and PSCs.
+An Arweave wallet identifier with details about users' balances and PSCs tokens.
