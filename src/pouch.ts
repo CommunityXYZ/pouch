@@ -142,20 +142,16 @@ export class Pouch {
     const winston: string = await this.arweave.wallets.getBalance(address);
     const balance: number = +this.arweave.ar.winstonToAr(winston, {formatted: true, decimals: 5, trim: true});
 
-    if(!acc) {
-      account = {
-        address,
-        name: address,
-        balance
-      };
-    } else {
-      account = {
-        address,
-        name: acc.name,
-        avatar: acc.avatar,
-        balance
-      }
-    }
+    const config = this.arweave.api.getConfig();
+    const url = `${config.protocol}://${config.host}:${config.port}/`;
+    const avatar = (acc && acc.avatar && acc.avatar.length) ? `${url + acc.avatar}` : acc.identicon;
+
+    account = {
+      address,
+      name: acc.name || address,
+      avatar,
+      balance
+    };
 
     this.accounts.set(address, account);
     return account;
