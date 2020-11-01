@@ -6,7 +6,7 @@ import { StateInterface } from 'community-js/lib/faces';
 import { AccountInterface, CommunityInterface } from './faces';
 
 console.log = (x: any) => {
-  if (new Error().stack?.includes("smartweave")) return;
+  if (new Error().stack?.includes('smartweave')) return;
   console.info(x);
 };
 
@@ -174,7 +174,7 @@ export class Pouch {
 
   private async loadCommunities(address: string): Promise<Map<string, CommunityInterface>> {
     const account = this.accounts.get(address);
-    if(account && account.communities && account.communities.size) {
+    if (account && account.communities && account.communities.size) {
       return account.communities;
     }
 
