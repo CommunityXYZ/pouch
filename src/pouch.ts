@@ -5,6 +5,11 @@ import Community from 'community-js';
 import { StateInterface } from 'community-js/lib/faces';
 import { AccountInterface, CommunityInterface } from './faces';
 
+console.log = (x: any) => {
+  if (new Error().stack?.includes("smartweave")) return;
+  console.info(x);
+};
+
 export class Pouch {
   private arweave: Arweave;
   private arweaveId: ArweaveID;
@@ -169,7 +174,7 @@ export class Pouch {
 
   private async loadCommunities(address: string): Promise<Map<string, CommunityInterface>> {
     const account = this.accounts.get(address);
-    if (account && account.communities.size) {
+    if(account && account.communities && account.communities.size) {
       return account.communities;
     }
 
@@ -214,7 +219,12 @@ export class Pouch {
     for (let i = 0, j = commIds.length; i < j; i++) {
       const commId = commIds[i];
       const comm = new Community(this.arweave);
-      this.commStates.set(commId, await comm.getState());
+      try {
+        await comm.setCommunityTx(commId);
+        this.commStates.set(commId, await comm.getState());
+      } catch (e) {
+        console.log(`ERROR: Couldn't load Community ${commId}`);
+      }
     }
 
     return true;
