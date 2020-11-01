@@ -1,5 +1,5 @@
-import Arweave from "arweave/node/common";
-import { AccountInterface, CommunityInterface } from "./faces";
+import Arweave from 'arweave';
+import { AccountInterface, CommunityInterface } from './faces';
 export declare class Pouch {
     private arweave;
     private arweaveId;
@@ -20,6 +20,7 @@ export declare class Pouch {
     getAccount(address: string, reload?: boolean): Promise<AccountInterface>;
     getName(address: string): Promise<string>;
     getAvatar(address: string): Promise<string>;
+    getIdenticon(address: string): Promise<string>;
     getBalance(address: string): Promise<number>;
     getCommunities(address: string): Promise<Map<string, CommunityInterface>>;
     getCommunityBalance(communityId: string, address: string): Promise<number>;

@@ -1,6 +1,6 @@
 import { ArweaveID } from '@arweaveid/arweaveid';
 import * as aridfaces from '@arweaveid/arweaveid/lib/faces';
-import Arweave from 'arweave/node/common';
+import Arweave from 'arweave';
 import Community from 'community-js';
 import { StateInterface } from 'community-js/lib/faces';
 import { AccountInterface, CommunityInterface } from './faces';

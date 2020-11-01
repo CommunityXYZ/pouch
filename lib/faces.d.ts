@@ -1,4 +1,4 @@
-import { StateInterface } from "community-js/lib/faces";
+import { StateInterface } from 'community-js/lib/faces';
 export interface CommunityInterface {
     name: string;
     logo: string;
@@ -11,6 +11,7 @@ export interface AccountInterface {
     address: string;
     name: string;
     avatar?: string;
+    identicon?: string;
     balance: number;
     communities?: Map<string, CommunityInterface>;
 }
