@@ -147,14 +147,19 @@ export class Pouch {
    */
   private async loadAccount(address: string): Promise<AccountInterface> {
     let acc: aridfaces.AccountInterface;
-    try {
-      acc = await this.arweaveId.getAccount(address);
-    } catch (e) {
-      console.log(e);
-    }
 
     const winston: string = await this.arweave.wallets.getBalance(address);
     const balance: number = +this.arweave.ar.winstonToAr(winston, { formatted: true, decimals: 5, trim: true });
+    try {
+      acc = await this.arweaveId.getAccount(address);
+    } catch (e) {
+      return {
+        address,
+        name: address,
+        identicon: await this.arweaveId.getIdenticon(address),
+        balance
+      };
+    }
 
     const config = this.arweave.api.getConfig();
     const url = `${config.protocol}://${config.host}:${config.port}/`;
