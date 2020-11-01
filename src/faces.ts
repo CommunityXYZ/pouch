@@ -14,6 +14,7 @@ export interface AccountInterface {
   address: string;
   name: string;
   avatar?: string;
+  identicon?: string;
   balance: number;
   communities?: Map<string, CommunityInterface>;
 }

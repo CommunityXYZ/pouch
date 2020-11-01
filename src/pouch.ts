@@ -56,6 +56,16 @@ export class Pouch {
     return account.avatar;
   }
 
+  async getIdenticon(address: string): Promise<string> {
+    const acc = this.accounts.get(address);
+    if(acc) return acc.identicon;
+
+    const account = await this.loadAccount(address);
+    this.accounts.set(address, account);
+
+    return account.identicon;
+  }
+
   async getBalance(address: string): Promise<number> {
     const acc = this.accounts.get(address);
     if(acc) return acc.balance;
@@ -138,7 +148,6 @@ export class Pouch {
       console.log(e);
     }
 
-    let account: AccountInterface;
     const winston: string = await this.arweave.wallets.getBalance(address);
     const balance: number = +this.arweave.ar.winstonToAr(winston, {formatted: true, decimals: 5, trim: true});
 
@@ -146,10 +155,11 @@ export class Pouch {
     const url = `${config.protocol}://${config.host}:${config.port}/`;
     const avatar = (acc && acc.avatar && acc.avatar.length) ? `${url + acc.avatar}` : acc.identicon;
 
-    account = {
+    const account: AccountInterface = {
       address,
       name: acc.name || address,
       avatar,
+      identicon: acc.identicon,
       balance
     };
 

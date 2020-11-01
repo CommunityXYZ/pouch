@@ -47,7 +47,7 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
-    "@arweaveid/arweaveid": "^3.0.1",
+    "@arweaveid/arweaveid": "^3.0.4",
     "arweave": "^1.9.1",
     "community-js": "^1.1.4"
   }
