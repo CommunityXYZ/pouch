@@ -157,7 +157,7 @@ export class Pouch {
         address,
         name: address,
         identicon: await this.arweaveId.getIdenticon(address),
-        balance
+        balance,
       };
     }
 
