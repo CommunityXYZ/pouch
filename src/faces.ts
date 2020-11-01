@@ -1,5 +1,5 @@
-import { JWKInterface } from "arweave/node/lib/wallet";
-import { StateInterface } from "community-js/lib/faces";
+import { JWKInterface } from 'arweave/node/lib/wallet';
+import { StateInterface } from 'community-js/lib/faces';
 
 export interface CommunityInterface {
   name: string;
