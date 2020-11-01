@@ -1,6 +1,6 @@
 {
   "name": "@communityxyz/pouch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An Arweave wallet identifier with details about users' balances and PSCs tokens.",
   "main": "lib/pouch.js",
   "repository": {
