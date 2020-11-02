@@ -2,16 +2,16 @@
 # yarn lockfile v1
 
 
-"@arweaveid/arweaveid@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@arweaveid/arweaveid/-/arweaveid-3.0.4.tgz#9adf9a0fb18f4935efd9ec712e2782dd055aab0b"
-  integrity sha512-P9FJOgibxkuK1Mxf7NvYQlmX+oaxOE69Db0UPmN/t9XGtOL91afNKwvEwDo4GEEBvYPUNKFjOwUeHMhL/+yZdQ==
+"@arweaveid/arweaveid@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@arweaveid/arweaveid/-/arweaveid-3.0.5.tgz#d2a881caaa03167d3a5a5aed83fa10805c93286e"
+  integrity sha512-OsstCtHNwxRy9HUA4U8wktd+VFkxmcb6eUbbzsOxzWmPZzd25NbXfgt79YL4s0O2qx9WkgtGjB4ZCSB/lGth5w==
   dependencies:
     arweave "^1.9.1"
     canvas "^2.6.1"
     jdenticon "^3.0.1"
     jest "^26.6.1"
-    smartweave "^0.4.6"
+    smartweave "^0.4.7"
     tiny-worker "^2.3.0"
     ts-jest "^26.4.3"
     typescript.api "^0.7.7"
@@ -3607,15 +3607,16 @@ smartweave@^0.3.x:
     loglevel "^1.7.0"
     yargs "^15.3.1"
 
-smartweave@^0.4.6:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.6.tgz#75682f858670e68e075a9ec0c11d8f9f90d32733"
-  integrity sha512-iTIXEpxqQ4+nuVHhcOCT/fo5PpioALksOYmuy3po2EDp78xK5WLYAyvr5Y7nlCGz7v3BQ18BmdwA2GSdtv9IwA==
+smartweave@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.7.tgz#b479b1cec226ce19682a2d1b6aaa120421b5cc2d"
+  integrity sha512-KbunXDE0nD8MebTqU0e4iD0DXqAOhNmntboTTS5gjKoIOqw/yA+laRCtxkJIKa0I4d2eq9nwBtoaC3HSsFvKhQ==
   dependencies:
     "@weavery/clarity" "^0.1.5"
     arweave "^1.9.1"
     bignumber.js "^9.0.1"
     loglevel "^1.7.0"
+    store "^2.0.12"
     yargs "^16.1.0"
 
 snapdragon-node@^2.0.1:
@@ -3759,6 +3760,11 @@ stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
+  integrity sha1-jFNOKguDH3K3X8XxEZhXxE711ZM=
 
 string-length@^4.0.1:
   version "4.0.1"
