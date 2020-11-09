@@ -2,16 +2,16 @@
 # yarn lockfile v1
 
 
-"@arweaveid/arweaveid@^3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@arweaveid/arweaveid/-/arweaveid-3.0.5.tgz#d2a881caaa03167d3a5a5aed83fa10805c93286e"
-  integrity sha512-OsstCtHNwxRy9HUA4U8wktd+VFkxmcb6eUbbzsOxzWmPZzd25NbXfgt79YL4s0O2qx9WkgtGjB4ZCSB/lGth5w==
+"@arweaveid/arweaveid@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@arweaveid/arweaveid/-/arweaveid-3.0.7.tgz#e70707528460d5888e63e8c1010ce540a8d300de"
+  integrity sha512-8xhO4/ZjOHY936hjMBh4dPkwIjTCoiBJuHZa2ADYT/iMbS/nORHCPRIxYanHs4LL0nVFNmtnynSBVxIYlcb1AA==
   dependencies:
     arweave "^1.9.1"
     canvas "^2.6.1"
     jdenticon "^3.0.1"
     jest "^26.6.1"
-    smartweave "^0.4.7"
+    smartweave "^0.4.10"
     tiny-worker "^2.3.0"
     ts-jest "^26.4.3"
     typescript.api "^0.7.7"
@@ -551,7 +551,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.x", "@types/jest@^26.0.15":
+"@types/jest@26.x":
   version "26.0.15"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.15.tgz#12e02c0372ad0548e07b9f4e19132b834cb1effe"
   integrity sha512-s2VMReFXRg9XXxV+CW9e5Nz8fH2K1aEhwgjUqPPbQd7g95T0laAcvLv032EhFHIa5GHsZ8W7iJEQVaJq6k3Gog==
@@ -895,7 +895,7 @@ bignumber.js@^8.1.1:
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-8.1.1.tgz#4b072ae5aea9c20f6730e4e5d529df1271c4d885"
   integrity sha512-QD46ppGintwPGuL1KqmwhR0O+N2cZUg8JG/VzwI2e28sM9TqHjQB10lI4QAaMHVbLzwVLLAwEglpKPViWX+5NQ==
 
-bignumber.js@^9.0.0, bignumber.js@^9.0.1:
+bignumber.js@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.0.1.tgz#8d7ba124c882bfd8e43260c67475518d0689e4e5"
   integrity sha512-IdZR9mh6ahOBv/hYGiXyVuyCetmGJhtYkqLBpTStdhEGjegpPlUawydyaF3pbIOFynJTpllEs+NP+CS9jKFLjA==
@@ -1147,13 +1147,11 @@ commander@^2.12.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-community-js@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/community-js/-/community-js-1.1.4.tgz#5933104980add2389af65b066e248896152b71e5"
-  integrity sha512-Me+Rsd0rp6mJZLpEt6QbYDcovFvnXYei4Tkgt+xMwudqueOB9KtcdlL1kvjTsAhUXLVNO5J9n9oW13sLhqJvTg==
+"community-js@file:../community-js":
+  version "1.1.5"
   dependencies:
     arweave "^1.9.1"
-    smartweave "^0.3.x"
+    smartweave "^0.4.10"
     tiny-worker "^2.3.0"
 
 component-emitter@^1.2.1:
@@ -3597,20 +3595,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-smartweave@^0.3.x:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.3.6.tgz#97a78d10b2f094f78a4b6bdecb6b55c8527d6728"
-  integrity sha512-+JWkNkeZj+S1u8qwJBDypzYQwuxVuWfOlLBQQRXiEMk+9YB4z28aWIFu5PxaGYYsKK1Vwc3J9bjI5EATaRBQCQ==
-  dependencies:
-    arweave "^1.9.1"
-    bignumber.js "^9.0.0"
-    loglevel "^1.7.0"
-    yargs "^15.3.1"
-
-smartweave@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.7.tgz#b479b1cec226ce19682a2d1b6aaa120421b5cc2d"
-  integrity sha512-KbunXDE0nD8MebTqU0e4iD0DXqAOhNmntboTTS5gjKoIOqw/yA+laRCtxkJIKa0I4d2eq9nwBtoaC3HSsFvKhQ==
+smartweave@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/smartweave/-/smartweave-0.4.10.tgz#9f5c29e439226476599476beaedb60d71c6cb57f"
+  integrity sha512-6/F44M55OahP7vM1SIxYGBNuYJO+UUEuHgN/U1YGwib9WOKbBXmhJH5g5249d3CWbdtPd37qFrtzfkfXFAk6jw==
   dependencies:
     "@weavery/clarity" "^0.1.5"
     arweave "^1.9.1"
@@ -4390,7 +4378,7 @@ yargs-parser@^18.1.2:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs@^15.3.1, yargs@^15.4.1:
+yargs@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==

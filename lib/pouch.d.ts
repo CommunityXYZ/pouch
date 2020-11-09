@@ -3,8 +3,11 @@ import { AccountInterface, CommunityInterface } from './faces';
 export declare class Pouch {
     private arweave;
     private arweaveId;
+    private communityIds;
     private accounts;
     private commStates;
+    private loadingCommunities;
+    private loadingCommStates;
     /**
      * Pouch constructor.
      * @param arweave Arweave initialized instance
@@ -34,4 +37,5 @@ export declare class Pouch {
     private loadCommunities;
     private getAllCommunityStates;
     private getAllCommunityIds;
+    private pause;
 }

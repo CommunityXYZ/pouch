@@ -13,8 +13,12 @@ console.log = (x: any) => {
 export class Pouch {
   private arweave: Arweave;
   private arweaveId: ArweaveID;
+  private communityIds: string[] = [];
   private accounts: Map<string, AccountInterface> = new Map();
   private commStates: Map<string, StateInterface> = new Map();
+
+  private loadingCommunities: boolean = false;
+  private loadingCommStates: boolean = false;
 
   /**
    * Pouch constructor.
@@ -220,7 +224,17 @@ export class Pouch {
     return communities;
   }
 
-  private async getAllCommunityStates(commIds: string[]): Promise<boolean> {
+  private async getAllCommunityStates(commIds: string[], cached = true): Promise<boolean> {
+    if(this.loadingCommStates) {
+      await this.pause();
+      return this.getAllCommunityStates(commIds);
+    }
+
+    if(cached && this.commStates.size) {
+      return true;
+    }
+
+    this.loadingCommStates = true;
     for (let i = 0, j = commIds.length; i < j; i++) {
       const commId = commIds[i];
       const comm = new Community(this.arweave);
@@ -232,13 +246,24 @@ export class Pouch {
       }
     }
 
+    this.loadingCommStates = false;
     return true;
   }
 
-  private async getAllCommunityIds(): Promise<string[]> {
+  private async getAllCommunityIds(cached = true): Promise<string[]> {
     let cursor = '';
     let hasNextPage = true;
 
+    if(this.loadingCommunities) {
+      await this.pause();
+      return this.getAllCommunityIds();
+    }
+
+    if(cached && this.communityIds.length) {
+      return this.communityIds;
+    }
+    
+    this.loadingCommunities = true;
     const ids: string[] = [];
     while (hasNextPage) {
       const query = {
@@ -291,6 +316,14 @@ export class Pouch {
       }
     }
 
+    this.communityIds = ids;
+    this.loadingCommunities = false;
+
     return ids;
+  }
+
+  // Utils
+  private async pause(timeout: number = 100) {
+    return new Promise(resolve => setTimeout(() => resolve(), timeout));
   }
 }
