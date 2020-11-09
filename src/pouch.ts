@@ -225,12 +225,12 @@ export class Pouch {
   }
 
   private async getAllCommunityStates(commIds: string[], cached = true): Promise<boolean> {
-    if(this.loadingCommStates) {
+    if (this.loadingCommStates) {
       await this.pause();
       return this.getAllCommunityStates(commIds);
     }
 
-    if(cached && this.commStates.size) {
+    if (cached && this.commStates.size) {
       return true;
     }
 
@@ -254,15 +254,15 @@ export class Pouch {
     let cursor = '';
     let hasNextPage = true;
 
-    if(this.loadingCommunities) {
+    if (this.loadingCommunities) {
       await this.pause();
       return this.getAllCommunityIds();
     }
 
-    if(cached && this.communityIds.length) {
+    if (cached && this.communityIds.length) {
       return this.communityIds;
     }
-    
+
     this.loadingCommunities = true;
     const ids: string[] = [];
     while (hasNextPage) {
@@ -324,6 +324,6 @@ export class Pouch {
 
   // Utils
   private async pause(timeout: number = 100) {
-    return new Promise(resolve => setTimeout(() => resolve(), timeout));
+    return new Promise((resolve) => setTimeout(() => resolve(), timeout));
   }
 }
